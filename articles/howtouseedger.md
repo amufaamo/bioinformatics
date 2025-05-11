@@ -58,6 +58,9 @@ rownames(counts_example_df) <- paste0("Gene", 1:100) # 遺伝子名を付与
 
 # 作成したデータの一部を表示して確認
 print(head(counts_example_df))
+
+# matrixにする
+
 ```
 
 出力例 (一部):
@@ -88,6 +91,8 @@ comparison_groups <- c("Control", "Treatment")
 ```
 
 これでデータの準備は完了です！
+
+# 
 
 # edgeRを使った解析関数
 
