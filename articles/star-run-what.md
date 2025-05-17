@@ -1,6 +1,10 @@
 -----
-
-## title: "STARのアライメント実行：リードをゲノム地図へ配置する旅" emoji: "🧭" type: "tech" topics: ["bioinformatics", "RNA-seq", "STAR", "genomics", "alignment", "次世代シーケンサー"] published: true
+title: "STARのアライメント実行：リードをゲノム地図へ配置する旅" 
+emoji: "🧭" 
+type: "tech" 
+topics: ["bioinformatics", "RNA-seq", "STAR", "genomics", "alignment", "次世代シーケンサー"] 
+published: true
+---
 
 # はじめに
 
