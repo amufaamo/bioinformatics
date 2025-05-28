@@ -4,6 +4,8 @@
 
 ### 新しいセッションの作成
 ```bash
+tmux new -s <セッション名>
+# もしくは
 tmux new-session -s セッションの名前
 ```
 
@@ -17,6 +19,8 @@ tmux ls
 
 ### 既存のセッションに入る (アタッチ)
 ```bash
+tmux a -t <セッション名または番号>
+#または
 tmux attach-session -t <セッション名または番号>
 ```
 
