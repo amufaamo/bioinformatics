@@ -44,3 +44,8 @@ tsa_nt
 taxdb
 core_nt
 ```
+
+## ダウンロード
+```bash
+update_blastdb.pl --decompress swissprot
+```
