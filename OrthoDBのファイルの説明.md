@@ -20,6 +20,17 @@
 6.  `OGs count`: この生物種が属しているオルソロググループ（OG）の総数です。
 7.  `mapping type`: マッピングのタイプです。`C`はClustered（クラスタリングされた）、`M`はMapped（マッピングされた）を意味します。
 
+#### 例
+```
+9       9_0     Buchnera aphidicola     GCF_900128725.1                 
+17      417_0   Methylophilus methylotrophus    GCF_003854875.1                 
+23      23_0    Shewanella colwelliana  GCF_001735525.1                 
+25      25_0    Shewanella hanedai      GCF_007197645.1                 
+33      33_0    Myxococcus fulvus       GCF_007991095.1                 
+41      41_0    Stigmatella aurantiaca  GCF_900109545.1                 
+48      48_0    Archangium gephyra      GCF_001027285.1
+```
+
 #### `odb12v1_levels.tab.gz`
 オルソロググループ（OG）が計算された分類階層（クレード）に関するファイルです。例えば、「哺乳類」や「真核生物」といった大きなくくりですね。
 1.  `level NCBI tax id`: その分類階層のNCBIタクソノミーIDです。
@@ -28,12 +39,50 @@
 4.  `OGs count`: その階層で構築されたオルソロググループ（OG）の総数です。
 5.  `species count`: その階層に属する生物種の数（重複なし）です。
 
+#### 例
+```
+2       Bacteria        66010659        644134  17551
+18      Pelobacter      12014   2745    2
+22      Shewanella      209206  10373   54
+32      Myxococcus      35831   7715    5
+68      Lysobacter      124862  8596    39
+75      Caulobacter     129918  8858    31
+81      Hyphomicrobium  39398   5059    12
+85      Hyphomonas      41951   4819    13
+126     Planctomycetaceae       56971   7034    34
+136     Spirochaetales  141419  10583   68
+137     Spirochaetaceae 119117  9915    15
+138     Borrelia        8223    1155    9
+157     Treponema       63438   6715    27
+170     Leptospiraceae  243681  9227    67
+171     Leptospira      238356  9206    65
+191     Azospirillum    127786  9749    23
+```
+
 #### `odb12v1_level2species.tab.gz`
 最上位の分類階層と、そこに属する各生物種との関係を示しています。
 1.  `top-most level NCBI tax id`: 最上位の分類階層のIDです。{2(細菌), 2157(古細菌), 2759(真核生物), 10239(ウイルス)}のいずれかです。
 2.  `OrthoDB organism id`: OrthoDBの生物IDです。
 3.  `hops`: 最上位からその生物の階層までの、分類階層をいくつ経由したかを示す数です。
 4.  `intermediate levels`: 最上位からその生物までの、中間の分類階層のリストです。
+#### 例
+```
+2       1052212_0       1       {2,1052212}
+2       1052212_1       1       {2,1052212}
+2       1069642_0       1       {2,1069642}
+2       1078050_0       1       {2,1078050}
+2       1104602_0       1       {2,1104602}
+2       1104602_1       1       {2,1104602}
+2       1120746_0       1       {2,1120746}
+2       1121390_0       1       {2,1121390}
+2       1121391_0       1       {2,1121391}
+2       1121399_0       1       {2,1121399}
+2       1121402_0       1       {2,1121402}
+2       1121403_0       1       {2,1121403}
+2       1121404_0       1       {2,1121404}
+2       1121409_0       1       {2,1121409}
+```
+
 
 #### `odb12v1_genes.tab.gz`
 遺伝子一つ一つに関する詳細な情報です。
@@ -49,11 +98,43 @@
 10. `genomic DNA id`: ゲノムDNAのIDです。
 11. `chromosome`: 染色体名です。
 
+
+#### 例
+```
+100_0:000000    100_0   WP_131833652.1  EV667_RS01940   A0A4R1I8Y6                      ATP-binding cassette domain-containing protein  [406224:407052](-)      NZ_SMFY01000001.1  Unknown
+100_0:000001    100_0   WP_131834425.1  EV667_RS06425   A0A4R1IBT8                      extracellular solute-binding protein    [1412675:1413725](+)    NZ_SMFY01000001.1       Unknown
+100_0:000002    100_0   WP_131835073.1  EV667_RS07960                           GNAT family N-acetyltransferase [1718702:1719233](+)    NZ_SMFY01000001.1       Unknown
+100_0:000003    100_0   WP_131834175.1  EV667_RS05015   A0A4V2PK40                      ABC transporter permease        [1083734:1084541](-)    NZ_SMFY01000001.1       Unknown
+100_0:000004    100_0   WP_131834578.1  EV667_RS07250   A0A4R1IAQ2                      Biopolymer transport protein ExbB       [1572487:1573651](+)    NZ_SMFY01000001.1       Unknown
+100_0:000005    100_0   WP_131834150.1  EV667_RS04890   A0A4R1IB33                      sigma-70 family RNA polymerase sigma factor     [1055373:1055874](+)    NZ_SMFY01000001.1  Unknown
+100_0:000006    100_0   WP_131834172.1  EV667_RS05000                           ribulose 1,5-bisphosphate carboxylase   [1079260:1080520](-)    NZ_SMFY01000001.1       Unknown
+100_0:000007    100_0   WP_131834248.1  EV667_RS05440   A0A4R1I9N8                      DUF2188 domain-containing protein       [1181606:1181873](-)    NZ_SMFY01000001.1       Unknown
+```
+
 #### `odb12v1_gene_xrefs.tab.gz`
 OrthoDBの遺伝子IDと、他のデータベースのIDとを関連付ける「相互参照」ファイルです。
 1.  `OrthoDB gene id`: OrthoDBの遺伝子IDです。
 2.  `external gene identifier`: 外部データベースでの遺伝子IDです。
 3.  `external DB name`: 外部データベースの名前です。{GOterm, InterPro, NCBIproteinGI, UniProt, ENSEMBL, NCBIgid, NCBIgenename}のいずれかが入ります。
+
+### 例
+```
+100_0:000000    GO:0005886      GOterm
+100_0:000000    GO:0000166      GOterm
+100_0:000000    GO:0016887      GOterm
+100_0:000000    GO:0005524      GOterm
+100_0:000000    IPR017871       InterPro
+100_0:000000    IPR003439       InterPro
+100_0:000000    IPR003593       InterPro
+100_0:000000    IPR027417       InterPro
+100_0:000000    WP_131833652.1  NCBIproteinAcc
+100_0:000000    A0A4R1I8Y6      UniProt
+100_0:000001    GO:0030288      GOterm
+100_0:000001    GO:0046872      GOterm
+100_0:000001    IPR026045       InterPro
+100_0:000001    WP_131834425.1  NCBIproteinAcc
+100_0:000001    A0A4R1IBT8      UniProt
+```
 
 #### `odb12v1_OGs.tab.gz`
 オルソロググループ（OG）自体の情報です。
